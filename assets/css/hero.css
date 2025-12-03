@@ -1,0 +1,9 @@
+.hero-section {
+  position: relative;
+  background-color: #0a1f3a; /* deep navy base */
+  background-image: radial-gradient(circle at 30% 25%, rgba(59, 130, 246, 0.25), transparent 40%),
+  radial-gradient(circle at 70% 75%, rgba(16, 185, 129, 0.18), transparent 50%),
+  linear-gradient(135deg, #0b1e3a, #0f254e);
+  color: #ffffff;
+  overflow: hidden;
+}

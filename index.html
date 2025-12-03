@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth scroll-pt-24">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Better HPC</title>
+
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body class="bg-slate-50 text-slate-900 antialiased font-sans">
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-30  flex justify-between px-6 py-4 bg-white shadow-sm">
+  <div class="relative inline-block font-semibold text-lg text-slate-900">
+    Better HPC
+    <span class="absolute -bottom-1 left-0 h-1 w-12 bg-blue-600"></span>
+  </div>
+
+  <div>
+    <!-- Desktop menu -->
+    <div id="desktop-menu" class="max-sm:hidden flex items-center gap-6 text-sm font-medium">
+      <a href="#mission" class="nav-link">Mission</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+
+    <!-- Mobile toggle -->
+    <button
+      id="mobile-menu-toggle"
+      class="sm:hidden text-slate-900 focus:outline-none cursor-pointer"
+      aria-label="Toggle menu">
+      <svg class="w-6 h-6" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+
+    <!-- Mobile menu -->
+    <div
+      id="mobile-menu"
+      class="hidden absolute top-full right-0 w-full flex flex-col gap-y-4 bg-white border-t border-slate-200 shadow-sm py-4 px-6 text-sm font-medium">
+      <span><a href="#mission" class="nav-link">Mission</a></span>
+      <span><a href="#about" class="nav-link">About</a></span>
+      <span><a href="#contact" class="nav-link">Contact</a></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero-section pt-32 pb-28">
+  <div class="max-w-6xl mx-auto px-6">
+    <h1 class="text-5xl sm:text-6xl font-extrabold">
+      Modern Software for Modern HPC
+    </h1>
+
+    <p class="max-w-xl mt-6 text-lg sm:text-xl">
+      Tools designed to reduce operational friction, and streamline the daily workflow of HPC administrators.
+    </p>
+
+    <div class="flex mt-8 gap-4">
+      <a
+        href="#contact"
+        class="px-6 py-3 rounded bg-blue-600 hover:bg-blue-700 shadow-sm font-semibold text-white transition-colors">
+        Contact Us
+      </a>
+      <a
+        href="#about"
+        class="px-6 py-3 rounded border border-slate-400 hover:bg-gray-500 hover:border-gray-500 font-medium transition-colors">
+        Learn More
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- MISSION -->
+<section id="mission" class="max-w-7xl mx-auto px-12 -mt-16 relative z-10">
+  <div class="rounded-xl shadow-lg border border-slate-200 bg-white p-10">
+    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">
+      Our Mission
+    </h2>
+
+    <p class="mt-6 sm:text-lg text-slate-600">
+      At Better HPC, we develop software that empowers high-performance computing environments to operate efficiently
+      and reliably. Our solutions streamline complex workflows, automate repetitive tasks, and address the daily
+      operational challenges faced by HPC administrators.
+    </p>
+
+    <p class="mt-6 sm:text-lg text-slate-600">
+      By focusing on robust, quality driven tools, we help HPC centers reduce operational friction, optimize
+      resource utilization, and deliver consistent, reproducible results to researchers and engineers alike. Every
+      product we build is grounded in real-world operational needs and designed to simplify management at scale.
+    </p>
+  </div>
+</section>
+
+<!-- ABOUT US -->
+<section id="about" class="max-w-5xl mx-auto px-6 mt-18">
+  <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">
+    About Us
+  </h2>
+
+  <p class="mt-6 sm:text-lg text-slate-600">
+    Better HPC was founded by engineers and systems architects with real-world experience managing HPC environments.
+    Our team understands the operational realities and technical challenges that shape modern HPC operations.
+    We build software guided by this expertise, focusing on solutions that simplify daily operations, reduce friction,
+    and empower administrators and researchers alike.
+  </p>
+
+  <p class="mt-6 sm:text-lg text-slate-600">
+    Our team partners directly with HPC centers, research institutions, and national labs to design tools that solve
+    practical problems in modern compute ecosystems. Every tool we create reflects our commitment to practical,
+    user-driven design informed by real-world HPC workflows.
+  </p>
+
+  <div class="mt-8 grid md:grid-cols-3 gap-10">
+    <div>
+      <h4 class="font-semibold text-blue-600 text-lg">
+        Operational Expertise
+      </h4>
+      <p class="mt-2 text-sm sm:text-base text-slate-600">
+        Years of production HPC experience help guide every architectural detail.
+      </p>
+    </div>
+
+    <div>
+      <h4 class="font-semibold text-blue-600 text-lg">
+        Scalable Software
+      </h4>
+      <p class="mt-2 text-sm sm:text-base text-slate-600">
+        Designed and tested for complex, demanding operational environments.
+      </p>
+    </div>
+
+    <div>
+      <h4 class="font-semibold text-blue-600 text-lg">
+        Research-Driven
+      </h4>
+      <p class="mt-2 text-sm sm:text-base text-slate-600">
+        Direct input from HPC admins and users drives a high quality user experience.
+      </p>
+    </div>
+  </div>
+
+  <div class="relative mt-12 h-px bg-slate-200 w-full"></div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="max-w-4xl mx-auto px-6 mt-18">
+  <div class="p-8 rounded-xl shadow-lg border border-slate-200 bg-white">
+    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">
+      Contact Us
+    </h2>
+    <p class="mt-6 sm:text-lg text-slate-600">
+      Have a question or project in mind? Tell us about it!
+    </p>
+
+    <form action="https://formsubmit.co/betterhpc@gmail.com" method="POST" class="mt-6 grid gap-4">
+      <input type="text" name="_honey" style="display:none">
+      <input type="text" placeholder="Your name" class="px-3 py-2 rounded border border-slate-300 text-base">
+      <input type="email" name="_replyto" placeholder="Email" class="px-3 py-2 rounded border border-slate-300 text-base">
+      <textarea rows="5" placeholder="Message" class="px-3 py-2 rounded border border-slate-300 text-base"></textarea>
+      <button class="px-6 py-3  rounded cursor-pointer shadow-lg bg-blue-600 hover:bg-blue-700 text-white transition-colors font-semibold text-base">
+        Send Message
+      </button>
+    </form>
+
+    <p class="mt-6 text-xs sm:text-sm text-slate-500">
+      Or email us directly at <a
+      href="mailto:hello@betterhpc.example"
+      class="text-blue-600 hover:underline">hello@betterhpc.example</a>
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="mt-24 py-6 border-t border-slate-200 text-center text-sm text-slate-600">
+  &copy; <span data-year></span> Better HPC. All rights reserved.
+</footer>
+
+<script type="module" src="/assets/js/main.ts"></script>
+
+</body>
+</html>
