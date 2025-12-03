@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   build:
-    name: HTML
+    name: Build and Publish
     runs-on: ubuntu-latest
 
     environment:
