@@ -6,4 +6,6 @@
   linear-gradient(135deg, #0b1e3a, #0f254e);
   color: #ffffff;
   overflow: hidden;
+  min-height: 500px;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
