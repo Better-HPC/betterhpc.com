@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "fontawesome-free/css/all.css";
 
 .hero-gradient {
   background: linear-gradient(135deg, #0a0f1a 0%, #0f172a 40%, #1e3a5f 100%);

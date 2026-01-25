@@ -5,14 +5,14 @@ import { contactSection } from "./components/contact-section/contact-section";
 import { FooterSection } from "./components/footer-section/footer-section";
 import { HeroSection } from "./components/hero-section/hero-section";
 import { MissionSection } from "./components/mission-section/mission-section";
-import { NavbarSection } from "./components/navbar-section/navbar-section";
+import { Navbar } from "./components/navbar/navbar";
 import { SoftwareSection } from "./components/software-section/software-section";
 
 @Component({
   selector: "app-root",
   standalone: true,
   imports: [
-    NavbarSection,
+    Navbar,
     HeroSection,
     MissionSection,
     AboutSection,
@@ -21,7 +21,7 @@ import { SoftwareSection } from "./components/software-section/software-section"
     FooterSection
   ],
   template: `
-    <app-navbar-section/>
+    <app-navbar/>
     <app-hero-section/>
     <app-mission-section/>
     <app-about-section/>
