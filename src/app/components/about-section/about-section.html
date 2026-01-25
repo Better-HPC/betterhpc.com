@@ -1,0 +1,40 @@
+<section class="py-24 bg-slate-950" id="about">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="mb-16">
+      <span class="text-sm font-medium text-blue-400 uppercase tracking-wider">About Us</span>
+      <h2 class="text-3xl sm:text-4xl font-bold mt-3 mb-6">
+        Built by People Who<br class="hidden sm:block"> <span class="text-gradient">Know HPC</span>
+      </h2>
+
+      <div class="space-y-6 text-slate-400 text-lg leading-relaxed max-w-3xl">
+        <p>
+          Better HPC was founded by engineers and systems architects with real-world experience managing
+          HPC environments. Our team understands the operational realities and technical challenges that
+          shape modern HPC operations. We build software guided by this expertise, focusing on solutions
+          that simplify daily operations, reduce friction, and empower administrators and researchers alike.
+        </p>
+        <p>
+          Our team partners directly with HPC centers, research institutions, and national labs to design
+          tools that solve practical problems in modern compute ecosystems. Every tool we create reflects
+          our commitment to practical, user-driven design informed by real-world HPC workflows.
+        </p>
+      </div>
+    </div>
+
+    <!-- Expertise Cards -->
+    <div class="grid md:grid-cols-3 gap-6">
+      <div
+        *ngFor="let card of expertiseCards"
+        [ngClass]="card.borderHover"
+        class="group p-6 rounded-2xl bg-slate-900/50 border border-slate-800 transition-all duration-300 card-glow">
+        <div
+          [ngClass]="card.iconColor"
+          class="w-12 h-12 rounded-xl border flex items-center justify-center mb-5 group-hover:scale-110 transition-all">
+          <i [ngClass]="card.icon" class="fas text-xl"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-white mb-2">{{ card.title }}</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">{{ card.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>

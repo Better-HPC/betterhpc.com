@@ -1,33 +1,33 @@
 import { Component } from "@angular/core";
 
-import { AboutComponent } from "./components/about/about";
-import { ContactComponent } from "./components/contact/contact";
-import { FooterComponent } from "./components/footer/footer";
-import { HeroComponent } from "./components/hero/hero";
-import { MissionComponent } from "./components/mission/mission";
-import { NavbarComponent } from "./components/navbar/navbar";
-import { SoftwareComponent } from "./components/software/software";
+import { AboutSection } from "./components/about-section/about-section";
+import { contactSection } from "./components/contact-section/contact-section";
+import { FooterSection } from "./components/footer-section/footer-section";
+import { HeroSection } from "./components/hero-section/hero-section";
+import { MissionSection } from "./components/mission-section/mission-section";
+import { NavbarSection } from "./components/navbar-section/navbar-section";
+import { SoftwareSection } from "./components/software-section/software-section";
 
 @Component({
   selector: "app-root",
   standalone: true,
   imports: [
-    NavbarComponent,
-    HeroComponent,
-    MissionComponent,
-    AboutComponent,
-    SoftwareComponent,
-    ContactComponent,
-    FooterComponent
+    NavbarSection,
+    HeroSection,
+    MissionSection,
+    AboutSection,
+    SoftwareSection,
+    contactSection,
+    FooterSection
   ],
   template: `
-    <app-navbar/>
-    <app-hero/>
-    <app-mission/>
-    <app-about/>
-    <app-software/>
-    <app-contact/>
-    <app-footer/>
+    <app-navbar-section/>
+    <app-hero-section/>
+    <app-mission-section/>
+    <app-about-section/>
+    <app-software-section/>
+    <app-contact-section/>
+    <app-footer-section/>
   `
 })
 export class App {}
