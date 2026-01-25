@@ -5,8 +5,8 @@ interface ExpertiseCard {
   icon: string;
   title: string;
   description: string;
-  iconStyle: string;
-  cardStyle: string;
+  iconStyle?: string;
+  cardStyle?: string;
 }
 
 @Component({

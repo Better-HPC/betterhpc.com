@@ -24,4 +24,8 @@ export class Navbar {
   closeMenu() {
     this.isMenuOpen = false;
   }
+
+  protected scrollToTop() {
+
+  }
 }
