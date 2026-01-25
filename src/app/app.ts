@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 
 import { AboutSection } from "./components/about-section/about-section";
 import { contactSection } from "./components/contact-section/contact-section";
-import { FooterSection } from "./components/footer-section/footer-section";
+import { Footer } from "./components/footer/footer";
 import { HeroSection } from "./components/hero-section/hero-section";
 import { MissionSection } from "./components/mission-section/mission-section";
 import { Navbar } from "./components/navbar/navbar";
@@ -18,7 +18,7 @@ import { SoftwareSection } from "./components/software-section/software-section"
     AboutSection,
     SoftwareSection,
     contactSection,
-    FooterSection
+    Footer
   ],
   template: `
     <app-navbar/>
@@ -27,7 +27,7 @@ import { SoftwareSection } from "./components/software-section/software-section"
     <app-about-section/>
     <app-software-section/>
     <app-contact-section/>
-    <app-footer-section/>
+    <app-footer/>
   `
 })
 export class App {}
