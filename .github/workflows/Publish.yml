@@ -42,7 +42,7 @@ jobs:
       - name: Upload dist to artifact storage
         uses: actions/upload-pages-artifact@v4
         with:
-          path: dist/<your-project-name>/browser
+          path: dist/betterhpc/browser
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
