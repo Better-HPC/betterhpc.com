@@ -1,5 +1,10 @@
 @import "tailwindcss";
-@import "fontawesome-free/css/all.css";
+@import "fontawesome-free/css/all.min.css";
+
+html {
+  scroll-padding-top: 5rem;
+  scroll-behavior: smooth;
+}
 
 .hero-gradient {
   background: linear-gradient(135deg, #0a0f1a 0%, #0f172a 40%, #1e3a5f 100%);
@@ -33,9 +38,4 @@
 
 .nav-link:hover::after {
   width: 100%;
-}
-
-html {
-  scroll-padding-top: 5rem;
-  scroll-behavior: smooth;
 }
