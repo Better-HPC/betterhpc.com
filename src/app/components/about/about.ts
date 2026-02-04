@@ -9,12 +9,16 @@ interface ExpertiseCard {
   cardStyle?: string;
 }
 
+/**
+ * Page section with a contact form.
+ * Collects user information and inquiry details for sales outreach.
+ */
 @Component({
-  selector: "app-about-section",
-  templateUrl: "about-section.html",
+  selector: "app-about",
+  templateUrl: "about.html",
   imports: [CommonModule],
 })
-export class AboutSection {
+export class About {
   protected expertiseCards: ExpertiseCard[] = [
     {
       icon: "fa-cogs",

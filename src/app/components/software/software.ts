@@ -12,12 +12,13 @@ interface SoftwareItem {
   description: string;
 }
 
+/** Page section used to highlight company product offerings. */
 @Component({
-  selector: "app-software-section",
+  selector: "app-software",
   imports: [CommonModule],
-  templateUrl: "software-section.html",
+  templateUrl: "software.html",
 })
-export class SoftwareSection {
+export class Software {
   protected softwareItems: SoftwareItem[] = [
     {
       name: "Keystone",

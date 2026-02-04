@@ -1,17 +1,19 @@
 import { CommonModule } from "@angular/common";
 import { Component, ElementRef, HostListener, viewChild } from "@angular/core";
 
+/** Navigation bar with responsive mobile support. */
 @Component({
   selector: "app-navbar",
   templateUrl: "navbar.html",
   imports: [CommonModule],
 })
 export class Navbar {
-  protected isMenuOpen = false;
-
   protected mobileMenu = viewChild<ElementRef>("mobileMenu");
   protected menuToggle = viewChild<ElementRef>("menuToggle");
 
+  protected isMenuOpen = false;
+
+  // Menu links displayed in the navbar.
   protected navLinks = [
     {label: "Mission", href: "#mission"},
     {label: "About", href: "#about"},

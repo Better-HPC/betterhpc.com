@@ -2,8 +2,8 @@ import { Component } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 
 @Component({
-  selector: "app-contact-section",
-  templateUrl: "contact-section.html",
+  selector: "app-contact",
+  templateUrl: "contact.html",
   imports: [FormsModule],
 })
-export class contactSection {}
+export class contact {}
