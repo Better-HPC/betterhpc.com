@@ -15,7 +15,7 @@ interface ExpertiseCard {
   imports: [CommonModule],
 })
 export class AboutSection {
-  expertiseCards: ExpertiseCard[] = [
+  protected expertiseCards: ExpertiseCard[] = [
     {
       icon: "fa-cogs",
       title: "Operational Expertise",

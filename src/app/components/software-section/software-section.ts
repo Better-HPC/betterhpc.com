@@ -18,7 +18,7 @@ interface SoftwareItem {
   templateUrl: "software-section.html",
 })
 export class SoftwareSection {
-  softwareItems: SoftwareItem[] = [
+  protected softwareItems: SoftwareItem[] = [
     {
       name: "Keystone",
       icon: "fa-code",
@@ -29,7 +29,13 @@ export class SoftwareSection {
     }
   ];
 
-  getStatusClasses(status: SoftwareStatus): string {
+  /**
+   * Return Tailwind classes for styling status badges.
+   *
+   * @arg status The displayed feature status.
+   * @return CSS classes for styling the status icon.
+   */
+  protected getStatusClasses(status: SoftwareStatus): string {
     const classes: Record<SoftwareStatus, string> = {
       success: "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20",
       primary: "bg-blue-500/10 text-blue-400 border border-blue-500/20",
