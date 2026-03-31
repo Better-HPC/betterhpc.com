@@ -1,10 +1,12 @@
 import { Component } from "@angular/core";
+import { RouterLink } from "@angular/router";
 
-/** Page footer containing the company name and copyright. */
+/** Site-wide footer with company branding and copyright. */
 @Component({
   selector: "app-footer",
   templateUrl: "footer.html",
+  imports: [RouterLink],
 })
-export class Footer {
+export class FooterComponent {
   protected currentYear = new Date().getFullYear();
 }

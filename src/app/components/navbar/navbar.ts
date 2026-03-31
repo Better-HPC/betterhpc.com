@@ -1,11 +1,17 @@
 import { CommonModule } from "@angular/common";
 import { Component, ElementRef, HostListener, viewChild } from "@angular/core";
+import { RouterLink, RouterLinkActive } from "@angular/router";
 
-/** Navigation bar with responsive mobile support. */
+interface NavLink {
+  label: string;
+  route: string;
+}
+
+/** Navigation bar with responsive mobile support and Angular Router integration. */
 @Component({
   selector: "app-navbar",
   templateUrl: "navbar.html",
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
 })
 export class Navbar {
   protected mobileMenu = viewChild<ElementRef>("mobileMenu");
@@ -13,36 +19,26 @@ export class Navbar {
 
   protected isMenuOpen = false;
 
-  // Menu links displayed in the navbar.
-  protected navLinks = [
-    {label: "Mission", href: "#mission"},
-    {label: "About", href: "#about"},
-    {label: "Software", href: "#software"},
+  protected navLinks: NavLink[] = [
+    { label: "About", route: "/" },
+    { label: "Keystone", route: "/keystone" },
   ];
 
-  /**
-   * Close mobile menu when clicking outside of it.
-   * Ignores clicks on the menu itself or the toggle button.
-   */
   @HostListener("document:click", ["$event"])
   protected handleOutsideClick(e: Event) {
     if (!this.isMenuOpen) return;
-
     const clickedToggle = this.menuToggle()?.nativeElement.contains(e.target);
     const clickedMenu = this.mobileMenu()?.nativeElement.contains(e.target);
-
     if (!clickedToggle && !clickedMenu) {
       this.closeMenu();
     }
   }
 
-  /** Toggle the mobile menu open/closed state. */
-  toggleMenu() {
+  protected toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  /** Close the mobile menu. */
-  closeMenu() {
+  protected closeMenu() {
     this.isMenuOpen = false;
   }
 }
