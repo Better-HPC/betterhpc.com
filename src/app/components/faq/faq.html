@@ -1,0 +1,29 @@
+<app-section
+  sectionId="faq"
+  title="Frequently Asked Questions"
+  subtitle="Common questions about Keystone, answered."
+  variant="muted"
+  maxWidth="max-w-3xl"
+>
+  <div class="space-y-3">
+    @for (item of faqItems; track item.question; let i = $index) {
+      <div class="bg-white rounded-xl border border-slate-200/80 shadow-sm overflow-hidden">
+        <button
+          (click)="toggleFaq(i)"
+          [attr.aria-controls]="'faq-panel-' + i"
+          [attr.aria-expanded]="item.isOpen"
+          class="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer hover:bg-slate-50/50 transition-colors"
+        >
+          <span class="font-medium text-slate-800 text-sm">{{ item.question }}</span>
+          <i
+            [class.rotate-180]="item.isOpen"
+            class="fas fa-chevron-down text-slate-300 text-xs transition-transform duration-300 ml-4 shrink-0"
+          ></i>
+        </button>
+        @if (item.isOpen) {
+          <div class="px-6 pb-5 text-slate-500 text-sm leading-relaxed">{{ item.answer }}</div>
+        }
+      </div>
+    }
+  </div>
+</app-section>

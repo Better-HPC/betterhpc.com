@@ -1,0 +1,18 @@
+<app-section
+  sectionId="highlights"
+  title="Built to Simplify HPC"
+  subtitle="Streamline operations, accelerate research, and gain actionable insights with our comprehensive HPC management solution."
+  variant="muted"
+>
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+    @for (feature of features; track feature.title) {
+      <div class="bg-white rounded-2xl p-6 shadow-lg border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all">
+        <div [ngClass]="feature.gradient" class="w-12 h-12 rounded-xl bg-linear-to-br flex items-center justify-center mb-4">
+          <i [ngClass]="feature.icon" class="fas text-white text-xl"></i>
+        </div>
+        <h3 class="font-bold text-lg mb-2">{{ feature.title }}</h3>
+        <p class="text-slate-600 text-sm">{{ feature.description }}</p>
+      </div>
+    }
+  </div>
+</app-section>

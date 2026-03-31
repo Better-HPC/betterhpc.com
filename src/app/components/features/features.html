@@ -1,0 +1,61 @@
+<app-section
+  sectionId="features"
+  title="Designed Around You"
+  subtitle="Whether you're a researcher, system administrator, or director, Keystone gives you what you need to work smarter."
+  variant="light"
+  maxWidth="max-w-6xl"
+>
+  <!-- Cards Grid -->
+  <div class="grid md:grid-cols-3 gap-6">
+    @for (card of stakeholders; track card.title) {
+      <div class="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all">
+        <!-- Gradient Bar -->
+        <div [ngClass]="card.gradient" class="h-2 bg-linear-to-r"></div>
+
+        <div class="p-8">
+          <!-- Icon -->
+          <div
+            [ngClass]="card.gradient"
+            class="w-14 h-14 rounded-xl bg-linear-to-r flex items-center justify-center mb-5 shadow-lg"
+          >
+            <i [ngClass]="card.icon" class="fas text-white text-2xl"></i>
+          </div>
+
+          <h3 class="text-xl font-bold text-slate-800 mb-1">{{ card.title }}</h3>
+          <p class="text-slate-500 text-sm mb-6">{{ card.subtitle }}</p>
+
+          <!-- Features List -->
+          <ul class="space-y-3 border-t border-slate-100 pt-5">
+            @for (feature of card.features; track feature.text) {
+              <li class="flex items-start gap-3">
+                <span
+                  [ngClass]="getStatusConfig(feature.status).bg"
+                  class="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
+                >
+                  <i [ngClass]="getStatusConfig(feature.status).icon" class="fas text-white text-xs"></i>
+                </span>
+                <span class="text-slate-600 text-sm">{{ feature.text }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Legend -->
+  <div class="flex items-center justify-center gap-6 mt-8 text-sm flex-wrap">
+    <div class="flex items-center gap-2">
+      <span class="w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center">
+        <i class="fas fa-check text-white text-xs"></i>
+      </span>
+      <span class="text-slate-600">Available Now</span>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="w-5 h-5 bg-slate-400 rounded-full flex items-center justify-center">
+        <i class="fas fa-circle text-white text-xs"></i>
+      </span>
+      <span class="text-slate-600">Coming Soon</span>
+    </div>
+  </div>
+</app-section>

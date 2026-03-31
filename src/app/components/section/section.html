@@ -1,0 +1,35 @@
+<section
+  [attr.id]="sectionId()"
+  [ngClass]="variantClasses"
+  class="py-24 relative overflow-hidden"
+>
+  <div [ngClass]="maxWidth()" class="mx-auto px-6 relative z-10">
+
+    <!-- Optional header -->
+    @if (label() || title() || subtitle()) {
+      <div [class.text-center]="centerHeader()" class="mb-14">
+
+        @if (label()) {
+          <span [ngClass]="labelClasses" class="text-sm font-medium uppercase tracking-wider">
+            {{ label() }}
+          </span>
+        }
+
+        @if (title()) {
+          <h2 [ngClass]="titleClasses" class="text-3xl md:text-4xl font-bold mt-2 mb-4">
+            {{ title() }}
+          </h2>
+        }
+
+        @if (subtitle()) {
+          <p [ngClass]="subtitleClasses" class="max-w-2xl mx-auto">
+            {{ subtitle() }}
+          </p>
+        }
+      </div>
+    }
+
+    <!-- Projected content -->
+    <ng-content />
+  </div>
+</section>

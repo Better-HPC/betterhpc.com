@@ -1,0 +1,77 @@
+<section class="hero-gradient min-h-screen flex items-center pt-20 relative overflow-hidden">
+  <!-- Background Blurs -->
+  <div class="absolute inset-0 opacity-30">
+    <div class="absolute top-20 left-10 w-50 h-50 bg-indigo-500 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-600 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-cyan-500 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 py-20 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Left Content -->
+      <div>
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          Unlock the Full Power of
+          <span class="text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-cyan-400">
+            High-Performance Computing
+          </span>
+        </h1>
+        <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+          Keystone is the unified platform that empowers researchers and administrators to maximize HPC resources with
+          intuitive controls, real-time insights, and seamless collaboration.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a
+            routerLink="/contact"
+            class="bg-linear-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg shadow-indigo-500/30 flex items-center gap-2"
+          >
+            <span>Request A Demo</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Content - Dashboard Preview -->
+      <div class="relative">
+        <div class="feature-img rounded-2xl p-6 shadow-2xl">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="w-3 h-3 rounded-full bg-red-500"></span>
+            <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+            <span class="w-3 h-3 rounded-full bg-green-500"></span>
+          </div>
+          <div class="bg-slate-800 rounded-lg p-4 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-slate-300 text-sm">Cluster Utilization</span>
+              <span class="text-emerald-400 text-sm font-semibold">87%</span>
+            </div>
+            <div class="w-full bg-slate-700 rounded-full h-3">
+              <div class="bg-linear-to-r from-emerald-500 to-cyan-500 h-3 rounded-full" style="width:87%"></div>
+            </div>
+            <div class="grid grid-cols-3 gap-3 mt-4">
+              @for (stat of dashboardStats; track stat.label) {
+                <div class="bg-slate-700/50 rounded-lg p-3 text-center">
+                  <div class="text-2xl font-bold text-white">{{ stat.value }}</div>
+                  <div class="text-slate-400 text-xs">{{ stat.label }}</div>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Notification -->
+        <div class="absolute -bottom-6 -left-6 glass rounded-xl p-4 shadow-xl">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center">
+              <i class="fas fa-check text-white"></i>
+            </div>
+            <div>
+              <div class="text-white font-semibold text-sm">Job Completed</div>
+              <div class="text-slate-400 text-xs">ML Training Pipeline #4521</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
