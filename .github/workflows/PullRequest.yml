@@ -1,0 +1,15 @@
+name: 🎯 Pull Request
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    name: Build
+    uses: ./.github/workflows/Build.yml
+
+  qa:
+    name: QA
+    needs: build
+    uses: ./.github/workflows/QA.yml
+    secrets: inherit

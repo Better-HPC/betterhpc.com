@@ -1,9 +1,7 @@
 name: 🎯 Publish
 
 on:
-  push:
-    branches:
-      - main
+  workflow_call:
 
 concurrency:
   group: updated-main
@@ -15,7 +13,7 @@ permissions:
   id-token: write
 
 jobs:
-  build:
+  publish:
     name: Build and Publish
     runs-on: ubuntu-latest
 
@@ -24,26 +22,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Checkout source
-        uses: actions/checkout@v6
-
-      - name: Setup Node
-        uses: actions/setup-node@v6
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build Angular app
-        run: npm run build -- --configuration=production
-
-      - name: Upload dist to artifact storage
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: dist/betterhpc/browser
-
       - name: Setup Pages
         uses: actions/configure-pages@v6
 

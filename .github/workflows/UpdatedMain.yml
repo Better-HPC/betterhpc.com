@@ -1,0 +1,21 @@
+name: 🎯 Updated Main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    uses: ./.github/workflows/Build.yml
+
+  publish:
+    name: Publish
+    needs: [ build ]
+    uses: ./.github/workflows/Publish.yml
+    secrets: inherit
+    permissions:
+      id-token: write
+      contents: read
+      pages: write
