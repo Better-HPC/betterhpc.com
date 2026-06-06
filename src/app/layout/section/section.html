@@ -1,0 +1,38 @@
+<section
+  [attr.id]="sectionId()"
+  [ngClass]="variantClasses"
+  class="py-24 md:py-28 relative overflow-hidden"
+>
+  <div [ngClass]="maxWidth()" class="mx-auto px-6 relative z-10">
+
+    <!-- Optional header -->
+    @if (label() || title() || subtitle()) {
+      <div [class.mx-auto]="centerHeader()" [class.text-center]="centerHeader()" class="mb-14 max-w-3xl">
+
+        @if (label()) {
+          <div [class.justify-center]="centerHeader()" class="flex items-center gap-2 mb-3">
+            <span [ngClass]="labelClasses" class="text-xs font-semibold uppercase tracking-[0.18em]">
+              {{ label() }}
+            </span>
+          </div>
+        }
+
+        @if (title()) {
+          <h2 [ngClass]="titleClasses" class="text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-[1.1] mb-4">
+            {{ title() }}
+          </h2>
+        }
+
+        @if (subtitle()) {
+          <p [class.mx-auto]="centerHeader()" [ngClass]="subtitleClasses" class="text-lg leading-relaxed max-w-2xl">
+            {{ subtitle() }}
+          </p>
+        }
+
+      </div>
+    }
+
+    <!-- Projected content -->
+    <ng-content/>
+  </div>
+</section>

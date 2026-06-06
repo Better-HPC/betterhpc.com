@@ -1,47 +1,203 @@
 @import "tailwindcss";
 @import "fontawesome-free/css/all.min.css";
 
+/* ============================================================
+   Better HPC — Design System
+   A single source of truth for color, type, elevation, and motion.
+   Direction: bright, modern, blue-anchored "cloud-tech" energy.
+   ============================================================ */
+
+@theme {
+  /* Brand blues — the workhorse. One primary, used relentlessly. */
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-200: #bfdbfe;
+  --color-brand-300: #93c5fd;
+  --color-brand-400: #60a5fa;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-800: #1e40af;
+  --color-brand-900: #1e3a8a;
+
+  /* Single accent — cyan. The only secondary hue on the site. */
+  --color-accent-400: #22d3ee;
+  --color-accent-500: #06b6d4;
+  --color-accent-600: #0891b2;
+
+  /* Display + body type. Sora gives headings a modern, geometric,
+     slightly technical character; Inter stays for readable body copy. */
+  --font-display: "Sora", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+:root {
+  /* The single brand gradient direction, reused everywhere. */
+  --gradient-brand: linear-gradient(120deg, #2563eb 0%, #0891b2 100%);
+  --gradient-brand-bright: linear-gradient(120deg, #3b82f6 0%, #22d3ee 100%);
+
+  /* One elevation scale. Soft, blue-tinted shadows read as "premium". */
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04),
+  0 8px 24px -12px rgba(37, 99, 235, 0.18);
+  --shadow-card-hover: 0 1px 2px rgba(15, 23, 42, 0.05),
+  0 24px 48px -16px rgba(37, 99, 235, 0.28);
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-sans);
 }
 
-/* Shared gradient text — works on both light and dark backgrounds */
-.gradient-text {
-  background: linear-gradient(90deg, #1e293b, #4f46e5, #1e293b);
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* ---- Heading treatment -------------------------------------------------
+   The old slate→indigo→slate "gradient-text" rendered muddy and low-contrast
+   on light backgrounds. Headings on light surfaces are now crisp solid slate;
+   the gradient is reserved for large display moments and accent words. */
+.text-ink {
+  color: #0f172a;
+}
+
+/* Accent gradient for a single emphasized word in a heading, or large hero
+   display text. High-contrast, bright, on-brand. */
+.text-brand-gradient {
+  background: var(--gradient-brand-bright);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Light variant for gradient text on dark backgrounds */
-.text-gradient {
-  background: linear-gradient(90deg, #818cf8, #22d3ee);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+/* ---- Surfaces ----------------------------------------------------------- */
 
-/* Hero section deep background */
+/* Hero / deep section background. Blue-anchored, no stray purple. */
 .hero-gradient {
-  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+  background: radial-gradient(60% 80% at 75% 10%, rgba(8, 145, 178, 0.25) 0%, transparent 60%),
+  radial-gradient(70% 90% at 15% 90%, rgba(37, 99, 235, 0.35) 0%, transparent 55%),
+  linear-gradient(160deg, #0a1429 0%, #0f1e3d 55%, #0a1f3a 100%);
 }
 
-/* Glass morphism effect for overlays */
+/* The one brand gradient utility for fills (icon tiles, bars, buttons). */
+.bg-gradient-brand {
+  background-image: var(--gradient-brand);
+}
+
+.bg-gradient-brand-bright {
+  background-image: var(--gradient-brand-bright);
+}
+
+/* Glass overlay for floating elements on dark backgrounds. */
 .glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
 }
 
-/* Dashboard preview card background */
+/* Dashboard mockup surface. */
 .feature-img {
-  background: linear-gradient(135deg, #1e293b, #334155);
-  border: 1px solid #475569;
+  background: linear-gradient(145deg, #0f1e3d, #14264a);
+  border: 1px solid rgba(96, 165, 250, 0.25);
 }
 
-/* Subtle glow on hover for dark cards */
-.card-glow:hover {
-  box-shadow: 0 0 30px rgba(99, 102, 241, 0.08);
+/* ---- Unified card --------------------------------------------------------
+   One card recipe for the whole site: same radius, border, shadow, and
+   hover-lift everywhere. Consistency here is what reads as "designed". */
+.card {
+  background: #ffffff;
+  border: 1px solid #e7ecf5;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card-interactive:hover {
+  border-color: var(--color-brand-200);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+}
+
+/* Consistent brand icon tile used across every card. */
+.icon-tile {
+  align-items: center;
+  background-image: var(--gradient-brand);
+  border-radius: 0.85rem;
+  box-shadow: 0 10px 20px -8px rgba(37, 99, 235, 0.5);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+/* ---- Decorative grid texture for hero atmosphere ----------------------- */
+.grid-texture {
+  background-image: linear-gradient(rgba(96, 165, 250, 0.08) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(96, 165, 250, 0.08) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 75%);
+}
+
+/* ---- Motion -------------------------------------------------------------
+   One orchestrated entrance: staggered fade-up on hero load. */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.fade-up-1 {
+  animation-delay: 0.05s;
+}
+
+.fade-up-2 {
+  animation-delay: 0.18s;
+}
+
+.fade-up-3 {
+  animation-delay: 0.31s;
+}
+
+.fade-up-4 {
+  animation-delay: 0.44s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up, .animate-bounce {
+    animation: none;
+    opacity: 1;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ---- Accessibility: visible focus for keyboard users ------------------- */
+:where(a, button, input, textarea, select):focus-visible {
+  border-radius: 0.5rem;
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
 }
