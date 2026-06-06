@@ -1,0 +1,44 @@
+<app-section
+  label="Software"
+  maxWidth="max-w-5xl"
+  sectionId="software"
+  subtitle="Preview the latest tools being built to solve real operational challenges in HPC environments."
+  title="Software on the Cutting Edge"
+  variant="light"
+>
+  <div class="flex flex-wrap justify-center gap-6">
+    @for (item of softwareItems; track item.name) {
+      <a
+        [routerLink]="item.route"
+        class="card card-interactive group relative w-full max-w-lg p-8 overflow-hidden"
+      >
+        <!-- Accent corner glow -->
+        <div class="absolute -top-16 -right-16 w-40 h-40 bg-brand-100/60 rounded-full blur-3xl group-hover:bg-brand-200/60 transition-colors"></div>
+
+        <div class="relative">
+          <!-- Status Badge -->
+          <div class="absolute top-0 right-0">
+            <span
+              [ngClass]="getStatusClasses(item.statusSeverity)"
+              class="text-xs font-semibold px-3 py-1 rounded-full">
+              {{ item.statusText }}
+            </span>
+          </div>
+
+          <!-- Icon -->
+          <div class="icon-tile w-14 h-14 mb-6 group-hover:scale-110 transition-transform">
+            <i [ngClass]="item.icon" class="fas text-2xl"></i>
+          </div>
+
+          <h3 class="text-xl font-bold text-ink mb-2">{{ item.name }}</h3>
+          <p class="text-slate-500 text-sm leading-relaxed mb-6">{{ item.description }}</p>
+
+          <div class="flex items-center gap-2 text-brand-600 text-sm font-semibold group-hover:gap-3 transition-all">
+            <span>Learn more</span>
+            <i class="fas fa-arrow-right"></i>
+          </div>
+        </div>
+      </a>
+    }
+  </div>
+</app-section>

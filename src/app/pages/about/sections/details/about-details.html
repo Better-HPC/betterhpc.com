@@ -1,0 +1,34 @@
+<app-section
+  label="About Us"
+  maxWidth="max-w-5xl"
+  sectionId="about"
+  title="Built From Real-World Experience"
+  variant="light"
+>
+  <div class="space-y-6 text-slate-600 text-lg leading-relaxed mb-14">
+    <p>
+      Better HPC was founded by engineers and systems architects with real-world experience managing
+      HPC environments. Our team understands the operational realities and technical challenges that
+      shape modern HPC operations. We build software guided by this expertise, focusing on solutions
+      that simplify daily operations, reduce friction, and empower administrators and researchers alike.
+    </p>
+    <p>
+      Our team partners directly with HPC centers, research institutions, and national labs to design
+      tools that solve practical problems in high-performance ecosystems. Every tool we create reflects
+      our commitment to practical, user-driven design informed by real-world HPC workflows.
+    </p>
+  </div>
+
+  <!-- Expertise Cards -->
+  <div class="grid md:grid-cols-3 gap-6">
+    @for (card of expertiseCards; track card.title) {
+      <div class="card card-interactive group p-6">
+        <div class="icon-tile w-12 h-12 mb-5 group-hover:scale-110 transition-transform">
+          <i [ngClass]="card.icon" class="fas text-xl"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-ink mb-2">{{ card.title }}</h3>
+        <p class="text-slate-500 text-sm leading-relaxed">{{ card.description }}</p>
+      </div>
+    }
+  </div>
+</app-section>

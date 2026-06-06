@@ -1,0 +1,65 @@
+<app-section
+  label="Contact"
+  maxWidth="max-w-2xl"
+  sectionId="contact"
+  subtitle="Have a question or project in mind? We'd love to hear from you."
+  title="Let's Talk"
+  variant="hero"
+>
+  <!-- Push below the fixed navbar -->
+  <div class="pt-12">
+    @if (true) {
+      <form (ngSubmit)="onSubmit()" class="space-y-5">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <input
+            [(ngModel)]="formData.name"
+            class="w-full bg-white/[0.07] border border-white/15 rounded-xl px-5 py-4 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all"
+            name="name"
+            placeholder="Your name"
+            required
+            type="text">
+          <input
+            [(ngModel)]="formData.email"
+            class="w-full bg-white/[0.07] border border-white/15 rounded-xl px-5 py-4 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all"
+            name="email"
+            placeholder="Email"
+            required
+            type="email">
+        </div>
+        <input
+          [(ngModel)]="formData.institution"
+          class="w-full bg-white/[0.07] border border-white/15 rounded-xl px-5 py-4 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all"
+          name="institution"
+          placeholder="Institution (optional)"
+          type="text">
+        <textarea
+          [(ngModel)]="formData.message"
+          class="w-full bg-white/[0.07] border border-white/15 rounded-xl px-5 py-4 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all resize-none"
+          name="message"
+          placeholder="How can we help?"
+          required
+          rows="5">
+        </textarea>
+        <button
+          class="group w-full bg-gradient-brand text-white py-4 rounded-xl font-semibold transition-all shadow-lg shadow-brand-600/30 hover:shadow-xl hover:shadow-brand-600/40 hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer"
+          type="submit">
+          <span>Send Message</span>
+          <i class="fas fa-paper-plane group-hover:translate-x-0.5 transition-transform"></i>
+        </button>
+      </form>
+    } @else {
+      <div class="glass rounded-2xl p-10 text-center">
+        <div class="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-5">
+          <i class="fas fa-check text-white text-2xl"></i>
+        </div>
+        <h3 class="text-2xl font-display font-bold text-white mb-2">Message sent</h3>
+        <p class="text-slate-300 mb-6">Thanks for reaching out — we'll be in touch shortly.</p>
+        <button
+          class="text-brand-300 hover:text-white font-semibold transition-colors cursor-pointer">
+          Send another message
+        </button>
+      </div>
+    }
+  </div>
+
+</app-section>
