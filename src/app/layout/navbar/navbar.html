@@ -1,0 +1,66 @@
+<nav class="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Brand mark -->
+    <a class="flex items-center gap-2.5 group" routerLink="/">
+      <span class="icon-tile w-9 h-9 text-base font-display font-bold">
+        <i class="fas fa-server text-sm"></i>
+      </span>
+      <span class="text-lg font-display font-bold text-white tracking-tight">Better HPC</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex items-center gap-8">
+      @for (link of menuContent; track link.route) {
+        <a
+          [routerLinkActiveOptions]="{ exact: link.route === '/' }"
+          [routerLink]="link.route"
+          class="relative text-slate-300 hover:text-white transition-colors text-sm font-medium after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-full after:bg-gradient-brand-bright after:scale-x-0 after:origin-left after:transition-transform after:duration-300"
+          routerLinkActive="text-white after:scale-x-100"
+        >
+          {{ link.label }}
+        </a>
+      }
+
+      <a
+        class="bg-gradient-brand text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all hover:shadow-lg hover:shadow-brand-500/30 hover:-translate-y-0.5"
+        routerLink="/contact"
+      >
+        Contact Us
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      #menuToggle
+      (click)="toggleMenu()"
+      aria-label="Toggle menu"
+      class="md:hidden text-white cursor-pointer w-9 h-9 flex items-center justify-center"
+    >
+      <i [ngClass]="isMenuOpen ? 'fa-times' : 'fa-bars'" class="fas text-xl"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  @if (isMenuOpen) {
+    <div #mobileMenu class="md:hidden bg-slate-950 border-t border-white/5 px-6 py-5">
+      <div class="flex flex-col gap-4 text-sm font-medium">
+        @for (link of menuContent; track link.route) {
+          <a
+            (click)="closeMenu()"
+            [routerLink]="link.route"
+            class="text-slate-300 hover:text-white transition-colors"
+          >
+            {{ link.label }}
+          </a>
+        }
+        <a
+          (click)="closeMenu()"
+          class="bg-gradient-brand text-white px-5 py-3 rounded-lg text-center font-semibold mt-1"
+          routerLink="/contact"
+        >
+          Contact Us
+        </a>
+      </div>
+    </div>
+  }
+</nav>
