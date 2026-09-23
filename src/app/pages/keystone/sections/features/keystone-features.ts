@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import { SectionComponent } from "@layout/section/section";
+import { Section } from "@layout/section/section";
 
 type FeatureStatus = "available" | "pending";
 
@@ -19,7 +19,7 @@ interface StakeholderCard {
 /** Section displaying Keystone features grouped by stakeholder role. */
 @Component({
   selector: "app-keystone-features",
-  imports: [SectionComponent],
+  imports: [Section],
   templateUrl: "keystone-features.html",
 })
 export class KeystoneFeatures {

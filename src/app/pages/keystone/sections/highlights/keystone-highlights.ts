@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import { SectionComponent } from "@layout/section/section";
+import { Section } from "@layout/section/section";
 
 interface Highlight {
   icon: string;
@@ -11,7 +11,7 @@ interface Highlight {
 /** Section highlighting Keystone's core capabilities. */
 @Component({
   selector: "app-keystone-highlights",
-  imports: [SectionComponent],
+  imports: [Section],
   templateUrl: "keystone-highlights.html",
 })
 export class KeystoneHighlights {

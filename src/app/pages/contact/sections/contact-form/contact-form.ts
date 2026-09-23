@@ -1,10 +1,10 @@
 import { Component } from "@angular/core";
-import { SectionComponent } from "@layout/section/section";
+import { Section } from "@layout/section/section";
 
 /** Contact form section with dark hero-style background. */
 @Component({
   selector: "app-contact-form",
-  imports: [SectionComponent],
+  imports: [Section],
   templateUrl: "contact-form.html",
 })
 export class ContactForm {

@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import { SectionComponent } from "@layout/section/section";
+import { Section } from "@layout/section/section";
 
 interface ExpertiseCard {
   icon: string;
@@ -11,7 +11,7 @@ interface ExpertiseCard {
 /** Company background and expertise cards section. */
 @Component({
   selector: "app-about-details",
-  imports: [SectionComponent],
+  imports: [Section],
   templateUrl: "about-details.html",
 })
 export class AboutDetails {

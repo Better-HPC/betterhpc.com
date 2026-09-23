@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { SectionComponent } from "@layout/section/section";
+import { Section } from "@layout/section/section";
 
 interface FaqItem {
   question: string;
@@ -10,7 +10,7 @@ interface FaqItem {
 /** Expandable FAQ accordion section. */
 @Component({
   selector: "app-keystone-faq",
-  imports: [SectionComponent],
+  imports: [Section],
   templateUrl: "keystone-faq.html",
 })
 export class KeystoneFaq {

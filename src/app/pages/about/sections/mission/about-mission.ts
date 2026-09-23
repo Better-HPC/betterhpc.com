@@ -1,10 +1,10 @@
 import { Component } from "@angular/core";
-import { SectionComponent } from "@layout/section/section";
+import { Section } from "@layout/section/section";
 
 /** Company mission statement section. */
 @Component({
   selector: "app-about-mission",
-  imports: [SectionComponent],
+  imports: [Section],
   templateUrl: "about-mission.html",
 })
 export class AboutMission {}

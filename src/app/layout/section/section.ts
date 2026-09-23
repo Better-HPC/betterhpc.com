@@ -19,7 +19,7 @@ export type SectionVariant = "light" | "muted" | "dark" | "hero" | "none";
   selector: "app-section",
   templateUrl: "section.html",
 })
-export class SectionComponent {
+export class Section {
   /** HTML id attribute for anchor linking. */
   sectionId = input<string>();
 
