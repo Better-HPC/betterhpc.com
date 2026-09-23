@@ -16,7 +16,7 @@
         <div class="p-8">
           <!-- Icon -->
           <div class="icon-tile w-14 h-14 mb-5">
-            <i [ngClass]="card.icon" class="fas text-2xl"></i>
+            <i [class]="card.icon" class="fas text-2xl"></i>
           </div>
 
           <h3 class="text-xl font-bold text-ink mb-1">{{ card.title }}</h3>
@@ -27,10 +27,10 @@
             @for (feature of card.features; track feature.text) {
               <li class="flex items-start gap-3">
                 <span
-                  [ngClass]="getStatusConfig(feature.status).bg"
+                  [class]="getStatusConfig(feature.status).bg"
                   class="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
                 >
-                  <i [ngClass]="getStatusConfig(feature.status).icon" class="fas text-white text-[10px]"></i>
+                  <i [class]="getStatusConfig(feature.status).icon" class="fas text-white text-[10px]"></i>
                 </span>
                 <span class="text-slate-600 text-sm">{{ feature.text }}</span>
               </li>

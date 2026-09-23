@@ -1,4 +1,3 @@
-import { CommonModule } from "@angular/common";
 import { Component, input } from "@angular/core";
 
 /**
@@ -19,7 +18,6 @@ export type SectionVariant = "light" | "muted" | "dark" | "hero" | "none";
 @Component({
   selector: "app-section",
   templateUrl: "section.html",
-  imports: [CommonModule],
 })
 export class SectionComponent {
   /** HTML id attribute for anchor linking. */

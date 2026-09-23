@@ -1,4 +1,3 @@
-import { CommonModule } from "@angular/common";
 import { Component, ElementRef, HostListener, viewChild } from "@angular/core";
 import { RouterLink, RouterLinkActive } from "@angular/router";
 
@@ -11,7 +10,7 @@ interface NavLink {
 @Component({
   selector: "app-navbar",
   templateUrl: "navbar.html",
-  imports: [CommonModule, RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive],
 })
 export class Navbar {
   protected mobileMenu = viewChild<ElementRef>("mobileMenu");

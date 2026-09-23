@@ -1,5 +1,5 @@
-import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
+
 import { SectionComponent } from "@layout/section/section";
 
 interface Highlight {
@@ -11,7 +11,7 @@ interface Highlight {
 /** Section highlighting Keystone's core capabilities. */
 @Component({
   selector: "app-keystone-highlights",
-  imports: [CommonModule, SectionComponent],
+  imports: [SectionComponent],
   templateUrl: "keystone-highlights.html",
 })
 export class KeystoneHighlights {

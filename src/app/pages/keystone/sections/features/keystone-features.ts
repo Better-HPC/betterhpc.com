@@ -1,5 +1,5 @@
-import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
+
 import { SectionComponent } from "@layout/section/section";
 
 type FeatureStatus = "available" | "pending";
@@ -19,7 +19,7 @@ interface StakeholderCard {
 /** Section displaying Keystone features grouped by stakeholder role. */
 @Component({
   selector: "app-keystone-features",
-  imports: [CommonModule, SectionComponent],
+  imports: [SectionComponent],
   templateUrl: "keystone-features.html",
 })
 export class KeystoneFeatures {

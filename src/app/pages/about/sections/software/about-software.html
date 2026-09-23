@@ -19,7 +19,7 @@
           <!-- Status Badge -->
           <div class="absolute top-0 right-0">
             <span
-              [ngClass]="getStatusClasses(item.statusSeverity)"
+              [class]="getStatusClasses(item.statusSeverity)"
               class="text-xs font-semibold px-3 py-1 rounded-full">
               {{ item.statusText }}
             </span>
@@ -27,7 +27,7 @@
 
           <!-- Icon -->
           <div class="icon-tile w-14 h-14 mb-6 group-hover:scale-110 transition-transform">
-            <i [ngClass]="item.icon" class="fas text-2xl"></i>
+            <i [class]="item.icon" class="fas text-2xl"></i>
           </div>
 
           <h3 class="text-xl font-bold text-ink mb-2">{{ item.name }}</h3>

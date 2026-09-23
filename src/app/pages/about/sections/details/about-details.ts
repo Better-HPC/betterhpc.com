@@ -1,5 +1,5 @@
-import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
+
 import { SectionComponent } from "@layout/section/section";
 
 interface ExpertiseCard {
@@ -11,7 +11,7 @@ interface ExpertiseCard {
 /** Company background and expertise cards section. */
 @Component({
   selector: "app-about-details",
-  imports: [CommonModule, SectionComponent],
+  imports: [SectionComponent],
   templateUrl: "about-details.html",
 })
 export class AboutDetails {
