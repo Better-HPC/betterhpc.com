@@ -1,7 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
 import { RouterLink } from "@angular/router";
-import { SectionComponent } from "../../../../layout/section/section";
+import { SectionComponent } from "@layout/section/section";
 
 type SoftwareStatus = "success" | "primary" | "warning";
 

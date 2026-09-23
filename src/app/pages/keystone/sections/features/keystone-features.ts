@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
-import { SectionComponent } from "../../../../layout/section/section";
+import { SectionComponent } from "@layout/section/section";
 
 type FeatureStatus = "available" | "pending";
 

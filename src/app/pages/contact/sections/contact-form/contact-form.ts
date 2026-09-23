@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { SectionComponent } from "../../../../layout/section/section";
+import { SectionComponent } from "@layout/section/section";
 
 /** Contact form section with dark hero-style background. */
 @Component({

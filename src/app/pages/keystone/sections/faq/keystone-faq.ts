@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { SectionComponent } from "../../../../layout/section/section";
+import { SectionComponent } from "@layout/section/section";
 
 interface FaqItem {
   question: string;
