@@ -8,6 +8,30 @@ interface Highlight {
   description: string;
 }
 
+// Hoisted to module scope so the static content is allocated once rather than per instance
+const HIGHLIGHTS: readonly Highlight[] = [
+  {
+    icon: "fa-tachometer-alt",
+    title: "Real-Time Monitoring",
+    description: "Live status updates for tracking HPC usage and consumption across teams and clusters.",
+  },
+  {
+    icon: "fa-users-cog",
+    title: "Team Management",
+    description: "Self-service tools for researchers to manage teams, allocations, and resources with customizable alerts.",
+  },
+  {
+    icon: "fa-shield-alt",
+    title: "Enterprise Security",
+    description: "LDAP/SAML integration, role-based access, end-to-end logging, and fully auditable record keeping.",
+  },
+  {
+    icon: "fa-code",
+    title: "Developer-Friendly",
+    description: "Comprehensive REST API, official Python client, and prebuilt deployment recipes for easy administration.",
+  },
+];
+
 /** Section highlighting Keystone's core capabilities. */
 @Component({
   selector: "app-keystone-highlights",
@@ -15,26 +39,5 @@ interface Highlight {
   templateUrl: "keystone-highlights.html",
 })
 export class KeystoneHighlights {
-  protected features: Highlight[] = [
-    {
-      icon: "fa-tachometer-alt",
-      title: "Real-Time Monitoring",
-      description: "Live status updates for tracking HPC usage and consumption across teams and clusters.",
-    },
-    {
-      icon: "fa-users-cog",
-      title: "Team Management",
-      description: "Self-service tools for researchers to manage teams, allocations, and resources with customizable alerts.",
-    },
-    {
-      icon: "fa-shield-alt",
-      title: "Enterprise Security",
-      description: "LDAP/SAML integration, role-based access, end-to-end logging, and fully auditable record keeping.",
-    },
-    {
-      icon: "fa-code",
-      title: "Developer-Friendly",
-      description: "Comprehensive REST API, official Python client, and prebuilt deployment recipes for easy administration.",
-    },
-  ];
+  protected readonly features = HIGHLIGHTS;
 }

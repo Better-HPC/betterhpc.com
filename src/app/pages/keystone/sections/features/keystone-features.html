@@ -27,10 +27,10 @@
             @for (feature of card.features; track feature.text) {
               <li class="flex items-start gap-3">
                 <span
-                  [class]="getStatusConfig(feature.status).bg"
+                  [class]="statusConfig[feature.status].bg"
                   class="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
                 >
-                  <i [class]="getStatusConfig(feature.status).icon" class="fas text-white text-[10px]"></i>
+                  <i [class]="statusConfig[feature.status].icon" class="fas text-white text-[10px]"></i>
                 </span>
                 <span class="text-slate-600 text-sm">{{ feature.text }}</span>
               </li>

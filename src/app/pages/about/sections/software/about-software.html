@@ -19,7 +19,7 @@
           <!-- Status Badge -->
           <div class="absolute top-0 right-0">
             <span
-              [class]="getStatusClasses(item.statusSeverity)"
+              [class]="statusClasses[item.statusSeverity]"
               class="text-xs font-semibold px-3 py-1 rounded-full">
               {{ item.statusText }}
             </span>
