@@ -9,7 +9,7 @@
     @for (feature of features; track feature.title) {
       <div class="card card-interactive group p-6">
         <div class="icon-tile w-12 h-12 mb-4 group-hover:scale-110 transition-transform">
-          <i [ngClass]="feature.icon" class="fas text-xl"></i>
+          <i [class]="feature.icon" class="fas text-xl"></i>
         </div>
         <h3 class="font-bold text-lg text-ink mb-2">{{ feature.title }}</h3>
         <p class="text-slate-500 text-sm leading-relaxed">{{ feature.description }}</p>

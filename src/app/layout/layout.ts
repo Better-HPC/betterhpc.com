@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 
-import { FooterComponent } from "./footer/footer";
+import { Footer } from "./footer/footer";
 import { Navbar } from "./navbar/navbar";
 
 /**
@@ -10,7 +10,7 @@ import { Navbar } from "./navbar/navbar";
  */
 @Component({
   selector: "app-layout",
-  imports: [RouterOutlet, Navbar, FooterComponent],
+  imports: [RouterOutlet, Navbar, Footer],
   template: `
     <div class="min-h-screen flex flex-col">
       <app-navbar/>
@@ -21,4 +21,4 @@ import { Navbar } from "./navbar/navbar";
     </div>
   `,
 })
-export class LayoutComponent {}
+export class Layout {}

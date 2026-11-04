@@ -24,7 +24,7 @@
     @for (card of expertiseCards; track card.title) {
       <div class="card card-interactive group p-6">
         <div class="icon-tile w-12 h-12 mb-5 group-hover:scale-110 transition-transform">
-          <i [ngClass]="card.icon" class="fas text-xl"></i>
+          <i [class]="card.icon" class="fas text-xl"></i>
         </div>
         <h3 class="text-lg font-semibold text-ink mb-2">{{ card.title }}</h3>
         <p class="text-slate-500 text-sm leading-relaxed">{{ card.description }}</p>
